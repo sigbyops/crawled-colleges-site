@@ -160,3 +160,38 @@ Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-06-01 14:58:3
 Served asset /static_pages.js - 304 Not Modified (0ms)
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2012-06-01 19:12:44 -0400
+Connecting to database specified by database.yml
+Served asset /rails.png - 200 OK (16ms)
+
+
+Started GET "/static_pages/home.html" for 127.0.0.1 at 2012-06-01 19:12:53 -0400
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 183ms (Views: 182.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-01 19:12:53 -0400
+Served asset /application.css - 200 OK (25ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-01 19:12:53 -0400
+Served asset /jquery.js - 200 OK (13ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-06-01 19:12:53 -0400
+Served asset /static_pages.css - 200 OK (2ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-06-01 19:12:53 -0400
+Served asset /static_pages.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-01 19:12:53 -0400
+Served asset /jquery_ujs.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-01 19:12:53 -0400
+Served asset /application.js - 200 OK (7ms)
