@@ -11,9 +11,14 @@ describe "StaticPages" do
   	#	page.should have_content('CigBy')
     #end
     # TITLE
-    it "should have the title 'Home'" do
+    it "should have the base title" do
 		visit '/static_pages/home'
-		page.should have_selector('title', :text=>"#{base_title} | Home")
+		page.should have_selector('title', :text=>"#{base_title}")
+    end
+    # CUSTOM TITLE
+    it "should not have a custom page title" do
+		visit '/static_pages/home'
+		page.should_not have_selector('title',:text=>'| Home')
     end
     # HEADER
     it "should have the h1 'Home'" do

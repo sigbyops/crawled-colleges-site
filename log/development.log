@@ -158,3 +158,4 @@ Served asset /application.js - 304 Not Modified (1ms)
 
 Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-06-01 14:58:32 -0400
 Served asset /static_pages.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
