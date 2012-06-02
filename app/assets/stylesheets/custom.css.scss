@@ -26,7 +26,11 @@ textarea {
   text-align: center;
   h1 {
     margin-bottom: 10px;
+<<<<<<< HEAD
   }  
+=======
+  }
+>>>>>>> filling-in-layout
 }
 
 /* TYPOGRAPHY */
@@ -83,12 +87,21 @@ footer {
   color: $grayLight;
   a {
     color: $gray;
+<<<<<<< HEAD
     &:hover { 
       color: $grayDarker;
     }
   }  
   small { 
     float: left; 
+=======
+    &:hover {
+      color: $grayDarker;
+    }
+  }
+  small {
+    float: left;
+>>>>>>> filling-in-layout
   }
   ul {
     float: right;
