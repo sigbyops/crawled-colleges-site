@@ -1,10 +1,10 @@
 @import "bootstrap";
 
-/* VARIABLES */
+/* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
 
-/* UNIVERSAL */
+/* universal */
 
 html {
   overflow-y: scroll;
@@ -26,14 +26,10 @@ textarea {
   text-align: center;
   h1 {
     margin-bottom: 10px;
-<<<<<<< HEAD
-  }  
-=======
   }
->>>>>>> filling-in-layout
 }
 
-/* TYPOGRAPHY */
+/* typography */
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
@@ -60,7 +56,8 @@ p {
   line-height: 1.7em;
 }
 
-/* HEADER */
+
+/* header */
 
 #logo {
   float: left;
@@ -78,7 +75,7 @@ p {
   }
 }
 
-/* FOOTER */
+/* footer */
 
 footer {
   margin-top: 45px;
@@ -87,21 +84,12 @@ footer {
   color: $grayLight;
   a {
     color: $gray;
-<<<<<<< HEAD
     &:hover { 
       color: $grayDarker;
     }
   }  
   small { 
     float: left; 
-=======
-    &:hover {
-      color: $grayDarker;
-    }
-  }
-  small {
-    float: left;
->>>>>>> filling-in-layout
   }
   ul {
     float: right;
