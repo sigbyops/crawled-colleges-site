@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
   has_secure_password
   
   before_save { self.email.downcase! } # or |user| user.email = email.downcase
+  before_save :create_remember_token
   
   # validate valid name 
   validates :name, presence: true, length: { maximum:50 } # or validates(:name, presence:true)
@@ -27,4 +28,9 @@ class User < ActiveRecord::Base
   # validate valid password
   validates :password, presence: true, length: { minimum:6 }
   validates :password_confirmation, presence: true
+  
+  private
+    def create_remember_token
+      self.remember_token = SecureRandom.urlsafe_base64
+    end
 end
