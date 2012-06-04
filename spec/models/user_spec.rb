@@ -68,8 +68,6 @@ describe User do
       end      
     end
   end
-  
-  # test for rejection of duplicate email addresses
   describe "when email address is already taken" do
 	before do
 		user_with_same_email = @user.dup # duplicate user
@@ -77,6 +75,14 @@ describe User do
 		user_with_same_email.save
 	end
 	it { should_not be_valid }
+  end
+  describe "email address with mixed case" do
+	let(:mixed_case_email) { "Foo@ExAMPle.CoM" }
+	it "should be saved as all lower-case" do
+		@user.email = mixed_case_email
+		@user.save
+		@user.reload.email.should == mixed_case_email.downcase
+	end
   end
   
   # test for valid password
