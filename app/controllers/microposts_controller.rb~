@@ -1,13 +1,14 @@
 class MicropostsController < ApplicationController
   before_filter :signed_in_user, only: [:create, :destroy]
   before_filter :correct_user,   only: :destroy
+  
 	## if we want index action accessible even to non-signed-in users,
 	## we need to specify protected actions explicity
 	#def index
 	#end
 	
   def create
-    @micropost = current_user.microposts.build(params[:micropost])
+    @micropost = wrap(current_user.microposts.build(params[:micropost]))
     if @micropost.save
       flash[:success] = "You have written on the wall!"
       redirect_to root_path
