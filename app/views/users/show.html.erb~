@@ -3,9 +3,15 @@
   <aside class="span4">
     <section>
       <h1>
-        <%= gravatar_for @user %><br><br><br>
+        <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
+    </section>
+    <section>
+      <%= render 'shared/stats' %>
+    </section>
+    <section>
+    	<%= render 'follow_form' if signed_in? %>
     </section>
   </aside>
   

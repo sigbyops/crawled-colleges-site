@@ -17,6 +17,14 @@ class User < ActiveRecord::Base
   has_secure_password
   
   has_many :microposts, dependent: :destroy # dependent is belonging to user
+  has_many :relationships, foreign_key: "follower_id", dependent: :destroy
+  has_many :followed_users, through: :relationships, source: :followed
+  # have to include class name for reverse_relationships association b/c
+  # Rails would look for ReverseRelationship class, which doesn't exist.
+  has_many :reverse_relationships, foreign_key: "followed_id",
+                                   class_name:  "Relationship",
+                                   dependent:   :destroy
+  has_many :followers, through: :reverse_relationships#, source: :follower
   
   before_save { self.email.downcase! } # or |user| user.email = email.downcase
   before_save :create_remember_token
@@ -37,6 +45,20 @@ class User < ActiveRecord::Base
     # This is preliminary. See "Following users" for the full implementation.
     Micropost.where("user_id = ?", id)
   end
+  
+  ## RELATIONSHIP MODEL ##
+  def following?(other_user)
+    relationships.find_by_followed_id(other_user.id)
+  end
+
+  def follow!(other_user)
+    relationships.create!(followed_id: other_user.id) # can include self. at start
+  end
+  
+  def unfollow!(other_user)
+    relationships.find_by_followed_id(other_user.id).destroy
+  end
+  ## ##
   
   private
     def create_remember_token
