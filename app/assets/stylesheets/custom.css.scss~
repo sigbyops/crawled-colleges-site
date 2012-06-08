@@ -206,6 +206,10 @@ input, textarea, select, .uneditable-input {
   @extend .error;
 }
 
+.search {
+	text-align: center;
+}
+
 /* users index */
 
 .users {
@@ -220,10 +224,6 @@ input, textarea, select, .uneditable-input {
     }
   }
 }
-
-/* colleges index */
-
-
 
 /* microposts */
 

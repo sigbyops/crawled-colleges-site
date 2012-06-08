@@ -29,7 +29,11 @@ class UsersController < ApplicationController
   end
 
   def index
-		@users = User.paginate(page: params[:page])
+  	if params[:search]
+  		@users = User.where('users.name LIKE ?',"%#{params[:search]}%").paginate(page: params[:page])
+  	else
+  		@users = User.paginate(page: params[:page])
+  	end
   end
 
   def update
