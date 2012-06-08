@@ -1,0 +1,12 @@
+<% provide(:title, @college.name) %>
+<div class="college">
+	<h1>
+		<%= @college.name %>
+	</h1>
+	<h3>
+		Rate My Professors		
+	</h3>
+  <h4><em>Average:</em> <%= @college.avg %></h4>
+	<h4><em>Total: <%= @college.total %></h4>
+</div>
+

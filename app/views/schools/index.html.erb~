@@ -1,0 +1,19 @@
+<% provide(:title, 'All colleges') %>
+<h1>All colleges</h1>
+
+<%= will_paginate @colleges %>
+
+<%= form_tag schools_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+<%=# will_paginate @colleges %>
+
+<ul class="colleges">
+  <%= render @colleges %>
+</ul>
+
+<%= will_paginate @colleges %>
