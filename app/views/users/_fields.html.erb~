@@ -1,7 +1,8 @@
-<%#= render 'shared/error_messages' %>
-
 <%= f.label :name %>
 <%= f.text_field :name %>
+
+<%= f.label :high_school %>
+<%= f.text_field :high_school %>
 
 <%= f.label :email %>
 <%= f.text_field :email %>

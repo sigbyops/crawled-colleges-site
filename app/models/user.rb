@@ -10,10 +10,11 @@
 #  password_digest :string(255)
 #  remember_token  :string(255)
 #  admin           :boolean         default(FALSE)
+#  high_school     :string(255)
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :name, :email, :password, :password_confirmation
+  attr_accessible :name, :email, :password, :password_confirmation, :high_school
   has_secure_password
   
   has_many :microposts, dependent: :destroy # dependent is belonging to user
@@ -31,6 +32,8 @@ class User < ActiveRecord::Base
   
   # validate valid name 
   validates :name, presence: true, length: { maximum:50 } # or validates(:name, presence:true)
+  
+  validates :high_school, presence: true
   
   # validate valid email
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

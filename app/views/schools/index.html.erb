@@ -3,8 +3,7 @@
 
 <div class="search">
 	<%= form_tag schools_path, :method => 'get' do %>
-			<%= label_tag("Search for a college:") %>
-			<%= text_field_tag :search, params[:search] %>
+			<%= text_field_tag :search, params[:search], placeholder: "Search for a college..." %>
 			<%= submit_tag "Search", :name => nil, class: "btn btn-large btn-primary" %>
 	<% end %>
 </div>
