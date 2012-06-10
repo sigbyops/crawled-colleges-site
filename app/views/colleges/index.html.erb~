@@ -1,0 +1,17 @@
+<% provide(:title, 'All colleges') %>
+<h1>All colleges</h1>
+
+<div class="search">
+	<%= form_tag colleges_path, :method => 'get' do %>
+			<%= text_field_tag :search, params[:search], placeholder: "Search for a college..." %>
+			<%= submit_tag "Search", :name => nil, class: "btn btn-large btn-primary" %>
+	<% end %>
+</div>
+
+<%= will_paginate @colleges %>
+
+<ul class="colleges">
+  <%= render @colleges %>
+</ul>
+
+<%= will_paginate @colleges %>

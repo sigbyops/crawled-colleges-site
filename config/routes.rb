@@ -8,6 +8,7 @@ DemoApp::Application.routes.draw do
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
   resources :schools 
+  resources :colleges
 
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'

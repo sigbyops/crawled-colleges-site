@@ -1,0 +1,14 @@
+<% provide(:title, @college.name) %>
+<div class="college">
+	<h1>
+		<%= @college.name %>
+	</h1>
+	<h2>
+		<a href="<%= @college.img_link %>"><img src="<%= @college.image %>" alt="<%= @college.name %>" width=35% height=35% /></a>
+	</h2>
+	<h3>
+		<em>State: </em><%= @college.state %>,
+		<em>City: </em><%= @college.city %>
+	</h3>
+</div>
+
